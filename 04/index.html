@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="logging.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  <body>
+    <div id="header">
+      <span id="logo">Craigslist</span>
+      <input type="text" id="search" placeholder="Search...">
+      <nav id="menu">
+        <ul>
+          <li>Link 1</li>
+          <li>Link 2</li>
+          <li>Link 3</li>
+        </ul>
+      </nav>
+    </div>
+    <div id="content">
+
+      <div id="view-landing" class="view">
+        <button id="create-post-btn">Create New Post</button>
+        <div id="curated-posts"></div>
+        <div id="community-recs"></div>
+      </div>
+
+      <div id="view-create-post" class="view">
+        <form id="create-post-form">
+
+          <div><strong>What type of posting is this?</strong></div>
+          <br>
+
+          <input type="radio" id="job-offered" name="post_type" value="Job Offered">
+          <label for="job-offered">Job Offered</label>
+          <br>
+
+          <input type="radio" id="gig-offered" name="post_type" value="Gig Offered">
+          <label for="gig-offered">Gig Offered</label>
+          <br>
+
+          <input type="radio" id="job-wanted" name="post_type" value="Job Wanted">
+          <label for="job-wanted">Resume / Job Wanted</label>
+          <br><br>
+
+          <input type="radio" id="housing-offered" name="post_type" value="Housing Offered">
+          <label for="housing-offered">Housing Offered</label>
+          <br>
+
+          <input type="radio" id="housing-wanted" name="post_type" value="Housing Wanted">
+          <label for="housing-wanted">Housing Wanted</label>
+          <br><br>
+
+          <input type="radio" id="for-sale-owner" name="post_type" value="For Sale by Owner">
+          <label for="for-sale-owner">For Sale by Owner</label>
+          <br>
+
+          <input type="radio" id="for-sale-dealer" name="post_type" value="For Sale by Dealer">
+          <label for="for-sale-dealer">For Sale by Dealer</label>
+          <br>
+
+          <input type="radio" id="wanted-owner" name="post_type" value="Wanted by Owner">
+          <label for="wanted-owner">Wanted by Owner</label>
+          <br><br>
+
+          <input type="radio" id="service-offered" name="post_type" value="Service Offered">
+          <label for="service-offered">Service Offered</label>
+          <br><br>
+
+          <input type="radio" id="community" name="post_type" value="Community">
+          <label for="community">Community</label>
+          <br>
+
+          <input type="radio" id="event" name="post_type" value="Event / Class">
+          <label for="event">Event / Class</label>
+          <br><br><br>
+
+
+          <div><strong>Please choose a category:</strong></div>
+          <br>
+
+          <input type="radio" id="activity-partners" name="post_category" value="Activity Partners">
+          <label for="activity-partners">Activity Partners</label>
+          <br>
+
+          <input type="radio" id="artists" name="post_category" value="Artists">
+          <label for="artists">Artists</label>
+          <br>
+
+          <input type="radio" id="childcare" name="post_category" value="Childcare">
+          <label for="childcare">Childcare</label>
+          <br>
+
+          <input type="radio" id="general-community" name="post_category" value="General Community">
+          <label for="general-community">General Community</label>
+          <br>
+
+          <input type="radio" id="groups" name="post_category" value="Groups">
+          <label for="groups">Groups</label>
+          <br>
+
+          <input type="radio" id="local-news-views" name="post_category" value="Local News and Views">
+          <label for="local-news-views">Local News &amp; Views</label>
+          <br>
+
+          <input type="radio" id="lost-found" name="post_categoy" value="Lost and Found">
+          <label for="lost-found">Lost &amp; Found</label>
+          <br>
+
+          <input type="radio" id="missed-connections" name="post_category" value="Missed Connections">
+          <label for="missed-connections">Missed Connections</label>
+          <br>
+
+          <input type="radio" id="musicians" name="post_category" value="Musicians">
+          <label for="musicians">Musicians</label>
+          <br>
+
+          <input type="radio" id="pets" name="post_categoy" value="Pets">
+          <label for="pets">Pets</label>
+          <br>
+
+          <input type="radio" id="politics" name="post_category" value="Politics">
+          <label for="politics">Politics</label>
+          <br>
+
+          <input type="radio" id="rants-raves" name="post_category" value="Rants and Raves">
+          <label for="rants-raves">Rants &amp; Raves</label>
+          <br>
+
+          <input type="radio" id="rideshare" name="post_category" value="Rideshare">
+          <label for="rideshare">Rideshare</label>
+          <br>
+
+          <input type="radio" id="volunteers" name="post_category" value="Volunteers">
+          <label for="volunteers">Volunteers</label>
+          <br><br><br>
+
+
+
+          <input type="text" placeholder="Title">
+          <textarea placeholder="Enter post description"></textarea>
+          <input type="submit" value="Create Post">
+        </form>
+      </div>
+
+      <div id="view-post-created" class="view">
+        Congratulations! Your post was created successfully.
+      </div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+:root {
+  --text-black: #333;
+  --border-gray: #bbb;
+  --accent-blue: blue;
+  --accent-blue-light: #d6ebff;
+}
+
+html,
+body {
+  color: var(--text-black);
+  font-family: sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+#header {
+  align-items: center;
+  display: grid;
+  grid-template-areas: "logo search" "menu menu";
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  margin: 2rem auto 4rem auto;
+  max-width: 1100px;
+}
+
+#content {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+#logo {
+  font-size: 3rem;
+  font-weight: bold;
+  grid-area: logo;
+}
+
+#search {
+  border: 1px solid var(--border-gray);
+  border-radius: 5px;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.6rem;
+  grid-area: search;
+  padding: 1rem;
+}
+
+#menu {
+  border-bottom: 1px solid var(--border-gray);
+  border-top: 1px solid var(--border-gray);
+  font-size: 1.2rem;
+  grid-area: menu;
+  margin: 2rem 0 0 0;
+  padding: 1rem 0;
+}
+
+#menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+#menu li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 2rem 0 0;
+  opacity: .6;
+}
+
+form > input[type="text"],
+form > select,
+form > textarea {
+  border: 1px solid var(--border-gray);
+  border-radius: 5px;
+  color; inherit;
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+}
+
+form > input[type="text"],
+form > textarea {
+  width: 100%;
+}
+
+form > textarea {
+  min-height: 200px;
+}
+
+form > input[type="submit"],
+button {
+  background: var(--accent-blue-light);
+  border: 1px solid var(--accent-blue);
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: inherit;
+  padding: .2rem;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: grid;
+}
+
+#view-landing {
+  grid-template-areas: "create-post-btn null" "currated-posts community-recs";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
