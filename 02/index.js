@@ -15,8 +15,7 @@ window.onload = function() {
   form02.addEventListener("submit", handleSubmitForm02);
 
   // Add handlers for KLM operators.
-  document.addEventListener("click", logClick);
-  document.addEventListener("keypress", logKeyPress);
+  document.addEventListener("click", loggingjs.logEvent);
 
 
   // Helper functions.
@@ -35,13 +34,6 @@ window.onload = function() {
 
   function handleClickCreatePostBtn() {
     showView("view01");
-
-    // Log current timestamp to start timing trial.
-    loggingjs.logEvent(null, 'startTrial', {
-      eventName: 'startTrial',
-      info: {'timestamp': (new Date()).toString(), 'millis': Date.now()}
-    });
-
   }
 
   function handleSubmitForm01 (event) {
@@ -58,25 +50,6 @@ window.onload = function() {
   function handleSubmitCreatePostForm(event) {
     event.preventDefault();
     showView("view-post-created");
-
-    // Log current timestamp to end trial.
-    loggingjs.logEvent(null, 'endTrial', {
-      eventName: 'endTrial',
-      info: {'timestamp': (new Date()).toString(), 'millis': Date.now()}
-    });
-  }
-
-  function logClick() {
-  }
-
-  function logKeyPress() {
-  }
-
-  function logMouseDown() {
-    loggingjs.logEvent(null, 'myevent', {
-      eventName: 'myeventName',
-      info: {'key1': 'val1', 'key2': 'val2'}
-    });
   }
 
 }
