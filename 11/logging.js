@@ -179,23 +179,24 @@ return {
 //
 /////////////////////////////////////////////////////////////////////////////
 
+// Test Trial Form for Logging submission function
+// submits to the google form at this URL:
+// docs.google.com/forms/d/e/1FAIpQLSc7zC_jVUWUCYIwU7LeStTtI47oGtc8ytX37sAEPONQgG422w/viewform?usp=sf_link
 function sendNetworkLog(
     uid,
-    time,
-    eventName,
+    timestamp,
+    eventname,
     target,
     info,
-    state,
     log_version) {
-  var formid = "e/1FAIpQLScblldacOf3-BnDYM1FlVEL60PHs_x8_2yoqwLNVqmNarzX7A";
+  var formid = "e/1FAIpQLSc7zC_jVUWUCYIwU7LeStTtI47oGtc8ytX37sAEPONQgG422w";
   var data = {
-    "entry.1213174370": uid,
-    "entry.1557365071": time,
-    "entry.2063334899": eventName,
-    "entry.787942568": target,
-    "entry.251233848": info,
-    "entry.94462225": state,
-    "entry.1473081078": log_version
+    "entry.1901668466": uid,
+    "entry.529097135": timestamp,
+    "entry.1339179269": eventname,
+    "entry.1053709637": target,
+    "entry.1567084380": info,
+    "entry.445744617": log_version
   };
   var params = [];
   for (key in data) {
