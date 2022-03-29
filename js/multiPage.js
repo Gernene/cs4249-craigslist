@@ -4,6 +4,7 @@ window.onload = function() {
   const createPostForm = document.getElementById("create-post-form");
   const form01 = document.getElementById("form01");
   const form02 = document.getElementById("form02");
+  const logVer = document.getElementById("log-version").innerText;
 
   // Display landing page with specified CSS id.
   showView("view-landing");
@@ -15,7 +16,7 @@ window.onload = function() {
   form02.addEventListener("submit", handleSubmitForm02);
 
   // Add handlers for KLM operators.
-  document.addEventListener("click", loggingjs.logEvent);
+  document.addEventListener("click", handleEvent);
 
 
   // Helper functions.
@@ -46,6 +47,9 @@ window.onload = function() {
     showView("view03");
   }
 
+  function handleEvent(event) {
+      loggingjs.logEvent(event, logVer);
+  }
 
   function handleSubmitCreatePostForm(event) {
     event.preventDefault();

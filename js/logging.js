@@ -111,9 +111,9 @@ function getUniqueId() {
 }
 
 // Log the given event.
-function logEvent(event, customName, customInfo) {
+function logEvent(event, logVer, customName, customInfo) {
 	
-	console.log('event', event, 'customName', customName, 'customInfo', customInfo);
+	console.log('event', event, 'logVer', logVer, 'customName', customName, 'customInfo', customInfo);
 	
   var time = (new Date).getTime();
   var eventName = customName || event.type;
@@ -135,10 +135,10 @@ function logEvent(event, customName, customInfo) {
   var state = location.hash;
 
   if (ENABLE_CONSOLE_LOGGING) {
-    console.log(uid, time, eventName, target, info, state, LOG_VERSION);
+    console.log(uid, time, eventName, target, info, logVer, state);
   }
   if (ENABLE_NETWORK_LOGGING) {
-    sendNetworkLog(uid, time, eventName, target, info, state, LOG_VERSION);
+    sendNetworkLog(uid, time, eventName, target, info, logVer, state);
   }
 }
 

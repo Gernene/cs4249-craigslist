@@ -2,6 +2,7 @@ window.onload = function() {
     const views = document.getElementsByClassName("view");
     const createPostBtn = document.getElementById("create-post-btn");
     const createPostForm = document.getElementById("create-post-form");
+    const logVer = document.getElementById("log-version").innerText;
   
     // Display landing page with specified CSS id.
     showView("view-landing");
@@ -11,7 +12,7 @@ window.onload = function() {
     createPostForm.addEventListener("submit", handleSubmitCreatePostForm);
 
     // Add handlers for KLM operators.
-    document.addEventListener("click", loggingjs.logEvent);
+    document.addEventListener("click", handleEvent);
   
   
     // Helper functions.
@@ -30,13 +31,10 @@ window.onload = function() {
   
     function handleClickCreatePostBtn() {
       showView("view-create-post");
-  
-      // Log current timestamp to start timing trial.
-      loggingjs.logEvent(null, 'startTrial', {
-        eventName: 'startTrial',
-        info: {'timestamp': (new Date()).toString(), 'millis': Date.now()}
-      });
-  
+    }
+
+    function handleEvent(event) {
+        loggingjs.logEvent(event, logVer);
     }
   
     function handleSubmitCreatePostForm(event) {

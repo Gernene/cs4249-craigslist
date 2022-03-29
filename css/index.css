@@ -156,3 +156,7 @@ form select {
   grid-template-rows: auto auto;
 }
 
+#log-version {
+    display: none;
+}
+
