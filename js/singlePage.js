@@ -12,8 +12,9 @@ window.onload = function() {
     createPostForm.addEventListener("submit", handleSubmitCreatePostForm);
 
     // Add handlers for KLM operators.
-    document.addEventListener("click", handleEvent);
-  
+    document.addEventListener("click", loggingjs.logEvent);
+
+    setLogVer(logVer);
   
     // Helper functions.
   
@@ -31,10 +32,6 @@ window.onload = function() {
   
     function handleClickCreatePostBtn() {
       showView("view-create-post");
-    }
-
-    function handleEvent(event) {
-        loggingjs.logEvent(event, logVer);
     }
   
     function handleSubmitCreatePostForm(event) {

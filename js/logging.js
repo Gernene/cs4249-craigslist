@@ -111,9 +111,9 @@ function getUniqueId() {
 }
 
 // Log the given event.
-function logEvent(event, logVer, customName, customInfo) {
+function logEvent(event, customName, customInfo) {
 	
-	console.log('event', event, 'logVer', logVer, 'customName', customName, 'customInfo', customInfo);
+  console.log('event', event, 'customName', customName, 'customInfo', customInfo);
 	
   var time = (new Date).getTime();
   var eventName = customName || event.type;
@@ -135,10 +135,10 @@ function logEvent(event, logVer, customName, customInfo) {
   var state = location.hash;
 
   if (ENABLE_CONSOLE_LOGGING) {
-    console.log(uid, time, eventName, target, info, logVer, state);
+    console.log(uid, time, eventName, target, info, state);
   }
   if (ENABLE_NETWORK_LOGGING) {
-    sendNetworkLog(uid, time, eventName, target, info, logVer, state);
+    sendNetworkLog(uid, time, eventName, target, info, state);
   }
 }
 
@@ -153,6 +153,10 @@ return {
 };
 
 }());
+
+function setLogVer(ver) {
+    LOG_VERSION = ver;
+}
 
 /////////////////////////////////////////////////////////////////////////////
 // CHANGE ME:
@@ -187,8 +191,7 @@ function sendNetworkLog(
     timestamp,
     eventname,
     target,
-    info,
-    log_version) {
+    info) {
   var formid = "e/1FAIpQLSc7zC_jVUWUCYIwU7LeStTtI47oGtc8ytX37sAEPONQgG422w";
   var data = {
     "entry.1901668466": uid,
@@ -196,7 +199,7 @@ function sendNetworkLog(
     "entry.1339179269": eventname,
     "entry.1053709637": target,
     "entry.1567084380": info,
-    "entry.445744617": log_version
+    "entry.445744617": LOG_VERSION
   };
   var params = [];
   for (key in data) {
